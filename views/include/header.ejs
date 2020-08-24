@@ -1,0 +1,27 @@
+<div id="header_box">
+    <div id="title-box">
+        <div id="icon_box">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <div id="main-title">
+            <p>AMOUNT OF THINKING</p>
+        </div>
+    </div>
+    <div id="menu-box">
+        <div id="menu">
+            <%if(locals.user !== undefined){ %>
+            
+            <div id="menuList">
+                <a href="/mission">게시판</a>
+                <a href="/shop">네이버최저가쇼핑몰</a>
+                <a href="/">홈으로</a>
+            </div>
+            <div id="user-box">
+                <a href="/logout">로그아웃</a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>

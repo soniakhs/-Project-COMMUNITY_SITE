@@ -1,0 +1,839 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: 0;
+}
+body{
+    display: grid;
+    grid-template-rows: minmax(180px, auto) 1fr 120px;
+    font-family: 'Noto Serif KR';
+}
+
+#main-title p{
+    font-family: 'Crimson Text';
+    letter-spacing: 1px;
+    font-size: 40px;
+    cursor: default;
+    margin-left: -200px;
+}
+
+#icon_box{
+    position: relative;
+    right: 500px;
+}
+
+#icon_box i{
+    font-size: 43px;
+    margin: 0 11px;
+    transition: all 0.5s;
+}
+
+#icon_box i:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.border_alert_red{
+    box-shadow: 1px 0 10px red;
+}
+
+.border_success_green{
+    box-shadow: 1px 0px 10px green;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.register_alert{
+    color: red;
+    margin-left: 10%;
+}
+
+#user-box{
+    margin-right: 20px;
+}
+
+input,button{
+    border: 0;
+    border-radius: 5px;
+    padding: 15px 20px;
+}
+
+#title-box{
+    background-color:#3aaf9f;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-title{
+    color: #fff;   
+}
+
+#menu-box{
+    height: 50px;
+    width: 100%;
+}
+
+#menu{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 18px rgb(29, 66, 122);
+}
+
+#menu a{
+    color: #000;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+
+#menu a:hover{
+    color: rgb(136, 136, 136);
+}
+
+#menuList a{
+    padding: 0 60px;
+}
+
+#registerForm .inner{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    opacity: 1;
+    width: 50%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+#registerForm .inner .popup-title-box{
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid #ddd;
+}
+
+#registerForm .inner .popup-title-box h2{
+    text-align:center;
+    height: 100%;
+    line-height: 70px;
+    font-size:35px;
+    color: #3aaf9f;;
+}
+#registerForm .inner .popup-title-box p{
+    text-align: center;
+    line-height:35px;
+}
+
+#exit_register_popup{
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    position: fixed;
+    right: 60px;
+    top: 15px;
+    color: #3aaf9f;
+    font-size: 25px;
+}
+
+#registerForm .inner .popup-content-box{
+    width: 100%;
+    min-height: 80%;
+    
+}
+
+#registerForm .inner .popup-content-box input{
+    margin-top: 5%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 80%;
+    height: 10%;
+    margin-bottom: 16px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+}
+
+
+
+#registerForm {
+    width: 100%;
+    height: 100%;
+    background-color: #3aaf9f;;
+    position: fixed;
+    z-index: 20;
+    transition:all 0.7s;
+    top: 0;
+    left: 0;
+}
+
+.toTopOn{
+    top:-100%;
+    opacity: 0;
+}
+
+.displayNoneOn{
+    display: none;
+}
+
+#registerBtn{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+    font-weight: bold;
+    width: 140px;
+    height: 80px;
+    padding: 15px 10px;
+    font-size:16px ;
+}
+
+#registerBtn:hover{
+    background-color: #3aaf9f;
+    color: #fff;
+}
+
+#loginForm{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 20;
+    transition:all 0.7s;
+    top: 0;
+    left: 0;
+    background: #3aaf9f;
+}
+
+#loginForm .inner{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 20px;
+    opacity: 1;
+    width: 25%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#loginForm .inner .popup-title-box{
+    width: 100%;
+    height: 35%;
+    border-bottom: 1px solid #ddd;
+}
+
+#loginForm .inner .popup-title-box h2{
+    text-align:center;
+    height:20%;
+    line-height: 20px;
+    font-size:35px;
+    color: #3aaf9f;
+}
+
+#loginForm .inner .popup-title-box img{
+    width:300px;
+    height: 100px;
+    margin-left: 140px;
+}
+
+#exit_login_popup{
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    position: fixed;
+    right: 60px;
+    top: 15px;
+    color: #3aaf9f;
+    font-size: 25px;
+
+}
+
+#loginForm .inner .popup-title-box p{
+    height: 20%;
+    color: #111;
+    padding-left: 10%;
+    color: #999;
+    transition:all 2s;
+}
+
+#loginForm .inner .popup-content-box{
+    width: 100%;
+    height: 80%;
+    
+}
+
+#loginForm .inner .popup-content-box input{
+    margin-top: 3%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 80%;
+    height: 15%;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.login_alert{
+    color: red;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}
+
+#loginForm .inner .popup-content-box #login{
+    margin-left: 35%;
+    transform: translateX(-35%);
+}
+
+#loginForm .inner .popup-content-box button{
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+#loginForm .inner .popup-content-box button:hover{
+    background-color: #3aaf9f;
+    color: #fff;
+}
+
+section{
+    min-height: 800px;
+}
+
+#mainpage{
+    position: relative;
+    
+}
+
+#user_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 500px;
+}
+
+#profile_box{
+    width: 60%;
+    height: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#user_profile{
+    margin-left: 100px;
+    float: left;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ddd;
+}
+
+#user_status{
+    padding-top: 10px;
+    float: left;
+    background-color: rgba(49, 109, 128, 0.568);
+    width: 457px;
+    height: 130px;  
+}
+
+.main_profile_info{
+    height: 70px;
+    line-height: 70px;
+    cursor: default;
+}
+
+
+.main_profile_info i{
+    line-height: 70px;
+    float: left;
+    color: #3aaf9f;
+    font-size: 30px;
+}
+
+.main_profile_info h2{
+    float: left;
+   color: #154942;
+}
+
+#profile_box img{
+    width: 500px;
+    height: 500px;
+    transition: all 0.5s;
+}
+
+#profile_box button{
+    background-color: #ddd;
+    margin-top: 15px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.5s;
+}
+
+#profile_box button:hover{
+    background-color: #3aaf9f;
+    color: #fff;
+}
+
+#profile_box #user_status{
+    padding-left: 10px;
+}
+
+#exit_profile_popup{
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    position: fixed;
+    right: 60px;
+    top: 15px;
+    color: #3aaf9f;
+    font-size: 25px;
+}
+
+
+#shop_info{
+    position: absolute;
+    left: 50%;
+    padding-top: 50px;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 100%;
+}
+
+.shop_list{
+    margin-top: 200px;
+}
+#shop_info > h2{
+    text-align: center;
+    color: #1e6158;
+    font-size: 30px;
+}
+
+#shop_info > p{
+    padding-top: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#shop_info form{
+    margin-left: 43%;
+}
+
+#shop_info form .wordI{
+    width: 250px;
+    border: 1px solid #ddd;
+}
+
+#shop_info .reserI{
+    transition:all 0.5s;
+    font-weight: bold;
+}
+
+#shop_info .reserI:hover{
+    background-color: #3aaf9f;
+    color: #fff;
+}
+
+.shop_card{
+    width: 400px;
+    height: 500px;
+    box-shadow: 0 0 20px #2f9688;
+    margin: 75px 83px;
+    float: left;
+    border-radius: 20px;
+}
+
+.shop_card a{
+    font-size: 25px;
+    color: #154942;
+    display: block;
+    margin: 10px 20px;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+.shop_card .itemInfo{
+    background-color: rgb(16, 247, 16);
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px 20px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    cursor: default;
+    float: left;
+}
+
+.shop_card .itemPrice{
+    float: left;
+    background-color: rgb(232, 247, 16);
+    width: 120px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.shop_card a:hover{
+    color:#10201e;
+}
+
+#missionList{
+    position: relative;
+    font-family: 'Noto Serif KR';
+}
+
+#missionList a{
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    font-size: 25px;
+    color: #2f9688;
+    transition:all 0.3s;
+    font-weight: bold;
+}
+
+#missionList a:hover{
+    color:#1e6158;
+}
+
+#mission_write_page h2{
+    width: 100%;
+    background-color: #40bbabab;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 30px;
+    color: #fff;
+    height: 70px;
+    line-height: 70px;
+    font-family: 'Noto Serif KR';
+}
+
+#mission_write_page form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    font-family: 'Noto Serif KR';
+}
+
+#mission_write_page form input{
+    border: 1px solid #ddd;
+}
+
+#mission_write_page form button{
+    background-color: #ddd;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+#mission_write_page form button:hover{
+    background-color: #3aaf9f;
+    color: #fff;
+}
+
+#mission_write_page label{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#mission_write_page select{
+    height: 35px;
+    width: 60px;
+    font-size: 17px;
+}
+
+#mission_write_page select option{
+    font-size: 17px;
+}
+
+#mission_write_page #title{
+    width: 350px;
+}
+
+#mission_write_page form textarea{
+    padding: 12px 20px;
+    font-size: 20px;
+    border: 1px solid #2f96887c;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.card{
+    float: left;
+    width: 400px;
+    height: 570px;
+    box-shadow: 0px 0px 10px 1px #3aaf9f;
+    margin: 75px 50px;
+    border-radius: 10px;
+}
+
+.card .btn_wrap{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#missionUpdate_popup{
+    width: 100%;
+    height: 100%;
+    background-color: #3aaf9f;;
+    position: fixed;
+    z-index: 20;
+    transition:all 0.7s;
+    top: 0;
+    left: 0;
+}   
+
+#missionUpdate_popup .inner{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    opacity: 1;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#missionUpdate_popup .popup-title-box{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    width: 100%;
+    color: #2f9688;
+}
+
+#missionUpdate_popup .popup-content-box{
+    margin-left: 55%;
+    transform: translateX(-55%);
+}
+
+#missionUpdate_popup .popup-content-box #updatetitle{
+    border: 1px solid #ddd;
+}
+
+.update_info{
+    color: red;
+    position: fixed;
+    top: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#missionUpdate_popup button{
+    background-color: #ddd;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+#missionUpdate_popup .updateBoardBtn{
+    width: 88%;
+}
+
+#missionUpdate_popup button:hover{
+    color: #fff;
+    background-color: #3aaf9f;
+}
+
+.fixedMsg{
+    opacity: 0;
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(121, 255, 121);
+    min-width: 250px;
+    min-height: 70px;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 70px;
+    transition: all 0.5s;
+    font-weight: bold;
+    color: #000;
+}
+
+.msg_on{
+    opacity: 1;
+    bottom: 150px;
+}
+
+#writer{
+    margin-left: 10px;
+}
+
+#nowDate{
+    margin-left: 140px;
+}
+
+textarea{
+    resize: none;
+}
+
+.card h3{
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #3aaf9f;
+}
+
+.card textarea{
+    border: 1px solid #ddd;
+    margin: 12px 10px;
+    border-radius: 10px;
+    padding: 18px 14px;
+    cursor: default;
+}
+
+.card img{
+    width: 390px;
+    margin:0px 5px;
+    margin-top: 20px;
+    height: 200px;
+}
+
+.card button{
+    background-color: #ddd;
+    font-weight: bold;
+    transition:all 0.5s;
+}
+
+.card button:hover{
+    background-color:#3aaf9f;
+    color: #fff;
+}
+
+footer{
+    background-color:#3aaf9f;
+}
+
+.info-msg{
+    color: #fff;
+}
+
+#profile_popup{
+    width: 100%;
+    height: 100%;
+    background-color: #3aaf9f;;
+    position: fixed;
+    z-index: 20;
+    transition:all 0.7s;
+    top: 0;
+    left: 0;
+}
+
+#profile_popup .inner{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 15px;
+    opacity: 1;
+    width: 70%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+#profile_popup .inner h2{
+    height: 15%;
+    text-align: center;
+    line-height: 100px;
+}
+
+#profile_popup .inner p{
+    color: red;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#profile_popup .inner .profile_box{
+    margin-left: 40px;
+}
+
+.profile_box img{
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    margin: 2px;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.profile_img img{
+    width: 600px;
+    height: 600px;
+}
+.profile_box img:hover{
+    
+    transform: scale(1.3);
+    border-radius: 50%;
+}
+
+#getProfile_popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 20;
+    transition:all 0.7s;
+    top: 0;
+    left: 0;
+}
+
+
+#getProfile_popup .inner{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 15px;
+    opacity: 1;
+    width: 28%;
+    height: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #1e6158;
+}
+
+#getProfile_popup .popup-title-box{
+    height: 100px;
+    text-align: center;
+}
+
+#getProfile_popup .popup-title-box h2{
+    line-height: 100px;
+    letter-spacing: -3px;
+    color: #1e6158;
+}
+
+
+#getProfile_popup .popup-content-box{
+    margin-left: 130px;
+}
+
+#getProfile_popup .popup-content-box p{
+    font-weight: bold;
+    font-size:20px;
+}

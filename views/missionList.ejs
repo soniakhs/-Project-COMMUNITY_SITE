@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <%- include('include/head') -%>
+<body>
+    <header>
+        <%- include('include/header') -%>
+    </header>
+    
+    <section id="missionList">
+        <%if(locals.user !== undefined){ %>
+            <a href="/missionWrite">글 작성하기</a>
+            <div class="card" v-for="item in list">
+                <img src="https://blogs.sas.com/content/sastraining/files/2015/03/black_background.png" alt="" v-if="item.file === ''">
+                <img v-if="item.file !== undefined" :src="item.file" alt="">
+                <span id="writer">작성자:{{item.name}}</span></a>
+                <span id="nowDate">{{item.date.substring(0,10)}}</span>
+                <h3 class="missionTitle" id="missionTitle">{{item.title}}</h3>
+                <textarea class="missionInfo" id="missionContent" cols="45" rows="9" readonly>{{item.content}}</textarea>
+                <div class="btn_wrap">
+                    <button v-if="item.writer !== logId" @click="getUserProfile(item.id)">작성자프로필보기</button>
+                    <button v-if="item.writer === logId" @click="deleteMissionBoard(item.id)">삭제하기</button>
+                    <button v-if="item.writer === logId" @click="getMissionBoardId(item.id)">수정하기</button>
+                </div>
+            </div>
+            <p class="fixedMsg" :class="msgOnClass">
+                {{msg}}
+            </p>
+        <% } %>
+        
+<div id="missionUpdate_popup" :class="missionUpdateFormClass">
+    <div class="inner">
+        <div class="popup-title-box">
+            <h2><i class="fas fa-hashtag"></i>글수정하기</h2>
+            <p class="update_info">{{update_info}}</p>
+            <button id="exit_register_popup" @click="exit_missionUpdate_popup()">X</button>
+        </div>
+        <div class="popup-content-box">
+            <label for="updatetitle">제목 </label>
+            <input type="text" id="updatetitle" name="title" v-model="boardTitle">
+            <p>내용</p>
+            <textarea cols="60" rows="17" name="content" v-model="boardContent"></textarea><br>
+            <button @click="updateMissionBoard()" class="updateBoardBtn">수정하기</button>
+        </div>
+    </div>
+</div>
+
+<div id="getProfile_popup" :class="profileFormClass">
+    <div class="inner">
+        <div class="popup-title-box">
+            <h2><i class="fas fa-hashtag"></i>사용자프로필보기</h2>
+            <p class="update_info">{{update_info}}</p>
+            <button id="exit_profile_popup" @click="exit_profile_popup()">X</button>
+        </div>
+        <div class="popup-content-box">
+            <img :src="getUProfile" alt="" width="400" height="400">
+            <p>아이디: {{getUserid}}</p>
+            <p>이름 : {{getUserName}}</p>
+        </div>
+    </div>
+</div>
+    </section>
+    <footer>
+        <%- include('include/footer') -%>
+    </footer>
+</body>
+
+</html>

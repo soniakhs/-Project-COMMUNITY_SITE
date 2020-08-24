@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <%- include('include/head') -%>
+<body>
+    <header>
+        <%- include('include/header') -%>
+    </header>
+    <section id="shop_sec">
+        <div id="shop_info">
+            <h2>네이버 쇼핑</h2>
+            <p>네이버와 연동해서 필요한 물건의 최저가를 검색해주는 공간입니다.</p>
+            <p>검색 시에 네이버 쇼핑 정보를 가져옵니다!</p>
+            <form action="/shop" method="get">
+                <input type="text" name="word" class="wordI">
+                <input type="submit" value="검색" class="reserI">
+            </form>
+        </div>
+        <% if(locals.list !== undefined) {%>
+        <div class="shop_list">
+            <% list.forEach(item=>{ %>
+            <div class="shop_card" >
+                <% if(item.image !== undefined) { %>
+                    <img src="<%=item.image %>" alt="" width="400px" height="300px">
+                <% } %>
+                <a href="<%-item.link%>" target="_blank"><%- item.title -%></a>
+                <p class="itemInfo"><%= item.category1 %></p>
+                <p class="itemPrice">최저가-<%= item.lprice %></p>
+            </div>
+            <% }) %>
+        </div>
+        <% } %>
+    </section>
+    <footer>
+        <%- include('include/footer') -%>
+    </footer>
+</body>
+</html>
+
+
+
+

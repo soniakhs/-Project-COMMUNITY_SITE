@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <%- include('include/head') -%>
+<body>
+    <header>
+        <%- include('include/header') -%>
+    </header>
+    <section id="mission_write_page">
+        <%if(locals.user !== undefined){ %>
+        <h2><i class="fas fa-hashtag"></i>글 작성 페이지</h2>
+        <form action="/missionWrite" method="post" enctype="multipart/form-data">
+            <label for="title">제목 </label>
+            <input type="text" id="title" name="title"  v-model="mission_write_title">
+            <p><b>내용</b></p>
+            <textarea cols="60" rows="17" id="content" name="content" v-model="mission_write_content"></textarea><br>
+            <input type="file" name="files">
+            <button type="submit">전송</button>
+        </form>
+        <%}%>
+    </section>
+    <footer>
+        <%- include('include/footer') -%>
+    </footer>
+</body>
+</html>

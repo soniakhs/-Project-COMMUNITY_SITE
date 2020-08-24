@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <%- include('include/head') -%>
+<body>
+    <header>
+        <%- include('include/header') -%>
+    </header>
+    <section id="mainpage">
+        <%if(locals.user !== undefined){ %>
+        <div id="user_box">
+            <div id="profile_box">
+                <div id="user_profile">
+                    <img src="<%=locals.user.profile%>" alt="">
+                </div>
+                <div class="main_profile_info">
+                    <i class="fas fa-hashtag"></i><h2>프로필</h2>
+                </div>
+                <div id="user_status">
+                    <h3 id="user_status_name"><%=locals.user.name%></h3>
+                    <p id="user_status_level">ID : <%=locals.user.id%></p>
+                    <button @click="openProfilePopup()">제공프로필변경</button>
+                </div>
+               
+            </div>
+        </div>
+        <% } %>    
+    </section>
+    <footer>
+        <%- include('include/footer') -%>
+    </footer>
+</body>
+<%if(locals.user === undefined){ %>
+<div id="loginForm" :class="loginFormClass">
+    <div class="inner">
+        <div class="popup-title-box">
+            <img src="login.png" alt="">
+            <h2>LOGIN</h2>
+            <p class="info" :style="pStyle">로그인이 필수적인 사이트입니다. 회원이 아니라면 가입해주세요.</p>
+        </div>
+        <div class="popup-content-box">
+            <input type="text" id="inputId" placeholder="아이디입력" v-model="inputId" :class="check">
+            <input type="password" id="inputPass" placeholder="비밀번호입력" v-model="inputPass" :class="check">
+            <p class="login_alert" id="logAlert">{{alert}}</p>  
+            <button id="login" @click="login()">로그인</button>
+            <button id="registerPageBtn" @click="registerPage()">회원가입하러가기</button> 
+        </div>
+    </div>
+</div>
+<% } %>
+<%if(locals.user === undefined){ %>
+<div id="registerForm" :class="registerFormClass">
+    <div class="inner">
+        <div class="popup-title-box">
+            <p :class="colorChangeInfo">{{info}}</p>
+            <h2>REGISTER</h2>
+            <button id="exit_register_popup" @click="exit_register_popup()">X</button>
+        </div>
+        <div class="popup-content-box">
+            <input type="text" id="userInputId" placeholder="아이디입력" v-model="registerInputId" :class="check1" :key="register_ch">
+            <p class="register_alert">{{id_alert}}</p>
+            <input type="text" id="userInputName" placeholder="이름입력" v-model="registerInputName" :class="check2">
+            <p class="register_alert">{{name_alert}}</p>
+            <input type="password" id="userInputPass" placeholder="비밀번호입력" v-model="registerInputPassword" :class="check3">
+            <p class="register_alert">{{pass_alert}}</p>
+            <input type="password" id="userInputPassc" placeholder="비밀번호확인" v-model="registerInputPasswordc" :class="check4">
+            <p class="register_alert">{{passc_alert}}</p>
+            <button id="registerBtn" @click="register()">회원가입</button>   
+        </div>
+    </div>
+</div>
+<% } %>
+
+<div id="profile_popup" :class="profileFormClass">
+    <div class="inner">
+        <h2>제공 프로필</h2>
+        <p>프로필 클릭시 프로필이 바뀝니다.프로필 변겅시 다시 로그인을 하셔야합니다.</p>
+        <button id="exit_profile_popup" @click="exit_profile_popup()">X</button>
+        <div class="profile_box ">
+            <img src="/levelimg/lv1.jpg" alt="" @click="profile_update('/levelimg/lv1.jpg')">
+            <img src="/levelimg/lv2.jpg" alt="" @click="profile_update('/levelimg/lv2.jpg')">
+            <img src="/levelimg/lv3.jpg" alt="" @click="profile_update('/levelimg/lv3.jpg')">
+            <img src="/levelimg/lv4.jpg" alt="" @click="profile_update('/levelimg/lv4.jpg')">
+            <img src="/levelimg/lv5.jpg" alt="" @click="profile_update('/levelimg/lv5.jpg')">
+            <img src="/levelimg/lv6.jpg" alt="" @click="profile_update('/levelimg/lv6.jpg')">
+            <img src="/levelimg/lv7.jpg" alt="" @click="profile_update('/levelimg/lv7.jpg')">
+            <img src="/levelimg/lv8.jpg" alt="" @click="profile_update('/levelimg/lv8.jpg')">
+            <img src="/levelimg/lv9.jpg" alt="" @click="profile_update('/levelimg/lv9.jpg')">
+            <img src="/levelimg/lv10.jpg" alt="" @click="profile_update('/levelimg/lv10.jpg')">
+            <img src="/levelimg/lv11.jpg" alt="" @click="profile_update('/levelimg/lv11.jpg')">
+            <img src="/levelimg/lv12.jpg" alt="" @click="profile_update('/levelimg/lv12.jpg')">
+            <img src="/levelimg/lv13.jpg" alt="" @click="profile_update('/levelimg/lv13.jpg')">
+            <img src="/levelimg/lv14.jpg" alt="" @click="profile_update('/levelimg/lv14.jpg')">
+            <img src="/levelimg/lv15.jpg" alt="" @click="profile_update('/levelimg/lv15.jpg')">
+            <img src="/levelimg/lv16.jpg" alt="" @click="profile_update('/levelimg/lv16.jpg')">
+            <img src="/levelimg/lv17.jpg" alt="" @click="profile_update('/levelimg/lv17.jpg')">
+            <img src="/levelimg/lv18.jpg" alt="" @click="profile_update('/levelimg/lv18.jpg')">
+            <img src="/levelimg/lv19.jpg" alt="" @click="profile_update('/levelimg/lv19.jpg')">
+            <img src="/levelimg/lv20.jpg" alt="" @click="profile_update('/levelimg/lv20.jpg')">
+            <img src="/levelimg/lv21.jpg" alt="" @click="profile_update('/levelimg/lv21.jpg')">
+            <img src="/levelimg/lv22.jpg" alt="" @click="profile_update('/levelimg/lv22.jpg')">
+            <img src="/levelimg/lv23.jpg" alt="" @click="profile_update('/levelimg/lv23.jpg')">
+            <img src="/levelimg/lv24.jpg" alt="" @click="profile_update('/levelimg/lv24.jpg')">
+            <img src="/levelimg/lv25.jpg" alt="" @click="profile_update('/levelimg/lv25.jpg')">
+            <img src="/levelimg/lv26.jpg" alt="" @click="profile_update('/levelimg/lv26.jpg')">
+            <img src="/levelimg/lv27.jpg" alt="" @click="profile_update('/levelimg/lv27.jpg')">
+            <img src="/levelimg/lv28.jpg" alt="" @click="profile_update('/levelimg/lv28.jpg')">
+            <img src="/levelimg/lv29.jpg" alt="" @click="profile_update('/levelimg/lv29.jpg')">
+            <img src="/levelimg/lv30.jpg" alt="" @click="profile_update('/levelimg/lv30.jpg')">
+        </div>
+    </div>
+</div>
+</html>
